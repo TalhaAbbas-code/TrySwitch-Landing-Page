@@ -1,4 +1,4 @@
-#TrySwitch-Landing-Page
+### TrySwitch-Landing-Page
 TrySwitch is a modern and fully responsive landing page built with Next.js and TypeScript, designed to deliver smooth user experiences across all devices. The project showcases a sleek UI with interactive elements and animations that bring the interface to life.
 
 🔧 Tech Stack & Features:
