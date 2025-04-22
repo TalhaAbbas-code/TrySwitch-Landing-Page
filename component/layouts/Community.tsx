@@ -66,7 +66,7 @@ const Community = () => {
   return (
     <div
       ref={sectionRef}
-      className="flex section-padding max-sm:flex-col px-2 mt-10 items-center justify-around h-[98%] "
+      className="flex section-padding max-sm:flex-col px-2 mt-10 items-center justify-around h-[98vh] "
     >
       <div className="w-1/2 max-sm:w-full h-full flex flex-col gap-5 justify-evenly">
         <div className="flex flex-col gap-10">
@@ -88,13 +88,13 @@ const Community = () => {
           Subscribe
         </button>
       </div>
-      <div ref={imgRef} className="w-1/3 max-sm:w-full">
+      <div ref={imgRef} className="w-1/3 max-sm:h-1/2 max-sm:w-full">
         <Image
           src="/images/Frame.png"
           alt="Dynamic Image"
           className="w-full h-full mt-10"
-          width={800}
-          height={800}
+          width={300}
+          height={300}
         />
       </div>
     </div>

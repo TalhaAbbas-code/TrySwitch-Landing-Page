@@ -1,5 +1,5 @@
 "use client";
-import {slides} from '@/constants/slides'
+import { slides } from "@/constants/slides";
 import {
   Carousel,
   CarouselContent,
@@ -7,33 +7,108 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import gsap from "gsap";
 
 export default function Carousell() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
- 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  
+  useEffect(() => {
+    const timeline = gsap.timeline();
+
+    timeline
+      .fromTo(
+        ".currentSlideInfo",
+        {
+          y: 40,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        0
+      )
+      .to(
+        ".currentSlideInfo",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.7,
+        },
+        4.2
+      )
+      .to(
+        ".carouselContent",
+        {
+          x: `-${currentIndex * 100}%`,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        0
+      );
+
+    return () => {
+      timeline.kill();
+    };
+  }, [currentIndex]);
+
+  {/* text animation */}
+useEffect(() => {
+  const textEl = document.querySelector(".ticker-text") as HTMLElement | null;
+
+  if (!textEl) return; 
+
+  const width = textEl.scrollWidth;
+
+  const ticker = gsap.fromTo(
+    textEl,
+    { x: window.innerWidth },
+    {
+      x: -width,
+      duration: 12,
+      ease: "linear",
+      repeat: -1,
+    }
+  );
+
+  return () => {
+    ticker.kill(); 
+  };
+}, []);
+
+
+
+
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
   return (
-    <section className="py-16 section-padding md:px-12 border  border-red-500 ">
-      <h2 className="text-center text-3xl font-bold text-orange-600 mb-10">
+    <section className=" flex flex-col  overflow-hidden   h-[90vh] section-padding md:px-12">
+      <h2 className="text-center  text-4xl font-bold text-orange-600 ">
         Features
       </h2>
-      <div className="flex ">
-        <div className="w-1/2 flex flex-col items-center justify-evenly">
+
+      <div className="relative w-full my-10 overflow-hidden">
+        <div className="ticker-text whitespace-nowrap  text-7xl font-semibold text-gray-300 px-4">
+          TRYSWITCH-YOUR GATEWAY TO OFF-MARKET DEALS.
+        </div>
+      </div>
+
+      <div className="flex  max-sm:flex-col  max-sm:px-5 max-sm:gap-5">
+        <div className="w-1/2 max-sm:w-full flex flex-col items-center justify-between">
           {/* Current Slide Info */}
-          <div>
+          <div className="currentSlideInfo ">
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src={slides[currentIndex].icon}
@@ -41,7 +116,7 @@ export default function Carousell() {
                 width={70}
                 height={70}
               />
-              <h3 className="text-2xl font-bold text-primaryBlue  uppercase">
+              <h3 className="text-2xl max-sm:text-xl font-bold text-primaryBlue uppercase">
                 {slides[currentIndex].title}
               </h3>
             </div>
@@ -51,7 +126,7 @@ export default function Carousell() {
           </div>
 
           {/* Dots for navigation */}
-          <div className="flex justify-center mt-[30%] gap-3">
+          <div className="flex justify-center max-sm:mt-10 md:mt-[30%] gap-3">
             {slides.map((_, index) => (
               <span
                 key={index}
@@ -66,27 +141,16 @@ export default function Carousell() {
           </div>
         </div>
 
-        <div className="w-1/2">
-          <Carousel
-            className="w-full max-w-6xl mx-auto overflow-hidden"
-            opts={{ loop: true }}
-          >
-            <CarouselContent
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-                transition: "transform 0.6s ease-in-out",
-                display: "flex",
-              }}
-            >
+        <div className="w-1/2 max-sm:w-full flex   ">
+          <Carousel className="w-full max-w-6xl mx-auto overflow-hidden">
+            <CarouselContent className="carouselContent flex ">
               {slides.map((slide, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex-shrink-0 w-full flex flex-col md:flex-row items-center justify-between gap-12 px-4 md:px-10"
+                  className="flex-shrink-0 w-full  flex-col md:flex-row items-center justify-between gap-12 px-4 md:px-10"
                 >
-                  {/* Left */}
-
                   {/* Right */}
-                  <div className="flex-1 flex justify-center">
+                  <div className=" flex justify-center">
                     <Image
                       src={slide.image}
                       alt="Slide Image"
@@ -97,8 +161,6 @@ export default function Carousell() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-
-            {/* Dots */}
           </Carousel>
         </div>
       </div>

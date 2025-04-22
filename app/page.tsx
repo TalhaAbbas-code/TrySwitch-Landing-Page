@@ -14,8 +14,8 @@ export default function Home() {
     <div className=" bg-gray-50  ">
       <Nav />
       <Hero />
-      <Carousell />
       <WhyTrySwitch />
+      <Carousell />
       <Investor />
       <Seller />
       <Community />

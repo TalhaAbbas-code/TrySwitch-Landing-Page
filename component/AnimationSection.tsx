@@ -33,7 +33,7 @@ const AnimatedSection = ({
         ease: "power3.out",
         scrollTrigger: {
           trigger: videoRef.current,
-          start: "top 50%",
+          start: "top 60%",
         },
       });
     });
@@ -43,12 +43,12 @@ const AnimatedSection = ({
 
   return (
     <div
-      className={`flex  max-sm:flex-col px-2 items-center justify-around h-[98%] ${
+      className={`flex mt-10   max-sm:flex-col px-2 items-center justify-around h-[98%] ${
         reverse ? "flex-row-reverse" : ""
       }`}
     >
       {/* Animate this div */}
-      <div className={`w-1/2 max-sm:w-full flex ${reverse?"justify-end":""} `}>
+      <div className={`w-1/2 max-sm:w-full  flex ${reverse?"justify-end":""} `}>
         <div ref={videoRef} className={`w-[90%] max-sm:w-full`}>
           <video width="100%" height="auto" autoPlay muted loop>
             <source src={videoSrc} type="video/webm" />

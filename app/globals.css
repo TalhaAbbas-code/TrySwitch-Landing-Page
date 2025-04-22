@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .section-padding {
-    @apply px-[3%] max-sm:px-2;
+    @apply px-[3%] max-sm:px-5;
 }
 .input-padding {
   @apply pl-10 py-2;
