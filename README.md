@@ -1,3 +1,18 @@
+### TrySwitch-Landing-Page
+TrySwitch is a modern and fully responsive landing page built with Next.js and TypeScript, designed to deliver smooth user experiences across all devices. The project showcases a sleek UI with interactive elements and animations that bring the interface to life.
+
+🔧 Tech Stack & Features:
+
+⚙️ Next.js + TypeScript – for a fast, scalable, and type-safe development experience.
+
+💅 ShadCN UI – used for building accessible and reusable UI components.
+
+🎞️ GSAP (GreenSock Animation Platform) – integrated for smooth and performant scroll-based animations.
+
+📱 Fully Responsive – optimized layout and styling for all screen sizes, from mobile to desktop.
+
+This landing page reflects modern front-end development practices, with a focus on performance, responsiveness, and user engagement through animation.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
