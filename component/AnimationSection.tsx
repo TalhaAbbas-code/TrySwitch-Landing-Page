@@ -58,11 +58,11 @@ const AnimatedSection = ({
       </div>
 
       <div
-        className={`w-1/3 max-sm:w-full h-full flex flex-col justify-evenly`}
+        className={`lg:w-1/3 max-sm:w-full md:w-[50%] h-full flex flex-col justify-evenly`}
       >
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col  gap-16">
           <h1 className="text-primaryBlue text-4xl font-bold">{title}</h1>
-          <p className="p-text">{description}</p>
+          <p className="p-text text-justify">{description}</p>
         </div>
 
         <div className="flex justify-center gap-10 max-lg:flex-col">

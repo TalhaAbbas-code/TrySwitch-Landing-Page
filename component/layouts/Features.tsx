@@ -94,7 +94,7 @@ useEffect(() => {
   };
 
   return (
-    <section className=" flex flex-col  overflow-hidden   h-[90vh] section-padding md:px-12">
+    <section className=" flex flex-col  overflow-hidden    h-[90vh] section-padding md:px-12">
       <h2 className="text-center  text-4xl font-bold text-orange-600 ">
         Features
       </h2>

@@ -30,7 +30,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="bg-white section-padding">
+    <div className="bg-white  px-10 section-padding">
       <div className="flex flex-row justify-between items-center">
         <div className="flex">
           <Image src="/images/logo.png" alt="Logo" width={100} height={100} />

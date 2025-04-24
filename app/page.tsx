@@ -7,11 +7,11 @@ import Solutions from "@/component/layouts/Solutions";
 import Footer from "@/component/layouts/Footer";
 import GetInTouch from "@/component/layouts/GetInTouch";
 import WhyTrySwitch from "@/component/layouts/WhyTrySwitch";
-import Carousell from "@/component/Carousel";
+import Carousell from "@/component/layouts/Features";
 
 export default function Home() {
   return (
-    <div className=" bg-gray-50  ">
+    <div className=" bg-gray-50  flex flex-col  items-center  ">
       <Nav />
       <Hero />
       <WhyTrySwitch />

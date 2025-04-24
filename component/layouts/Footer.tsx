@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="  text-white pt-10 bg-white flex flex-col gap-10 pb-1  mt-10">
+    <footer className=" section-padding !px-0  text-white pt-10 bg-white flex flex-col gap-10 pb-1  mt-10 ">
       <div className="w-full section-padding  flex flex-col md:flex-row justify-between  items-start max-sm:gap-10 max-sm:items-start max-sm:px-2  pb-8">
         <div className="flex flex-col gap-5">
           <div className="flex gap-2  ">
@@ -82,7 +82,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="text-xs py-4 bg-gradient-primary-strong text-center  text-black">
+      <div className="text-xs w-full py-4 bg-gradient-primary-strong text-center  text-black">
         <p className="text-lg mt-2">
           Copyright © 2024 TrySwitch, All Rights Reserved.
         </p>

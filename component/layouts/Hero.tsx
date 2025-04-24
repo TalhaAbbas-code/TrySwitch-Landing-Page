@@ -66,7 +66,7 @@ const Hero = () => {
 
  
   return (
-    <div className="section-padding flex">
+    <div className="section-padding  flex">
       <div className="px-[3%] mt-10 max-sm:h-auto flex max-sm:flex-col mb-[5%] w-full bg-gradient-primary rounded-md h-[70vh]">
         <div className="w-[60%] max-sm:w-full max-sm:mt-10 flex flex-col justify-evenly">
           <p
@@ -82,9 +82,11 @@ const Hero = () => {
 
         <div className="w-1/2 max-sm:w-full">
           {imagesLoaded ? (
-            
             <img
-              src={`/images/sequence/${String(currentFrame).padStart(4, "0")}.png`}
+              src={`/images/sequence/${String(currentFrame).padStart(
+                4,
+                "0"
+              )}.png`}
               alt={`frame-${currentFrame}`}
               className="w-full h-full mt-5 md:mt-10 lg:ml-20"
             />
